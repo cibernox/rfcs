@@ -61,6 +61,7 @@ ecosystem don't use `Ember.K` internally.
 Phased approach:
 * Deprecate `Ember.K`: Use the deprecation API to signal the deprecation, and deprecation guide entry.
 * Add rule to ember-watson
+* Contact addon authors / auto-PR
 * Extract to addon. Precedence: `active-model-adapter`, `store.filter`
 * Do not include in #176.
 
