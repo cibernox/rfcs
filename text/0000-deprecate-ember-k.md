@@ -35,12 +35,12 @@ and generated fewer function allocations.
 However with the introduction of ES6 modules and the modularization of Ember
 in process (#176), keeping this feature would require to design an import path for it.
 
-While doable, the transpiled output is actually bigger then defining the functions
+While doable, the transpiled output is actually bigger than defining the functions
 inline, specially with the ES6 shorthand method syntax, and the perf difference
 of saving a few function allocations is despicable.
 
 The second downside of reusing the same instance in many places is that if for
-some reason the VM deoptimizes that function, that deoptimization is spreaded
+some reason the VM deoptimizes that function, that deoptimization is spread
 across all the usages of `Ember.K`.
 
 Lastly, the chainable nature of `Ember.K` tends to surprise the users:
@@ -57,7 +57,7 @@ derp.foo().bar().baz(); // O_o
 
 # Transition Path
 
-The obvious first step is to make sure Ember, Ember-data and other pieces of the
+The obvious first step is to make sure Ember, Ember Data and other pieces of the
 ecosystem don't use `Ember.K.` internally.
 
 The suggested transition is to *intentionally* not give `Ember.K` an import path in the new JS modules
